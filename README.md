@@ -9,3 +9,10 @@ Atom Smasher Experimental Tool
 - RTU programming for bridge communication
 - Master programming for bridge communication
 - Testing Master-RTU communcation link
+## Day 3 - Aug 29
+- RTU Board porting (Yun -> Yun Mini)
+- Dashboard Interface
+- Create function that reads all analog ins
+- Create function that sends N pulses
+- Brand identity
+- Motor and sensor interfacing
