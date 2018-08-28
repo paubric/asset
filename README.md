@@ -16,3 +16,4 @@ Atom Smasher Experimental Tool
 - Create function that sends N pulses
 - Brand identity
 - Motor and sensor interfacing
+- Recive and send live camera input
