@@ -1,3 +1,13 @@
+/*
+ * RTU v0.2 - Developed by Sturza Mihai
+ * Awaits connections from localhost at {ardunio-name}.local/arduino/{command}
+ * Prints out information as JSON
+ * Avail commands:
+ *  - analog/{pin}/(optional - analogWrite){value}
+ *  - digital/{pin}/{value}
+ *  - mode/{pin}/{input/output}
+*/
+
 // libraries
 #include <Bridge.h>
 #include <BridgeServer.h>
