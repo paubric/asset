@@ -39,7 +39,7 @@ rtu-name.local/arduino/digital/pin/value
 ```
 rtu-name.local/arduino/analog
 ```
-## Analog Read
+## Analog Read Pin
 ```
 rtu-name.local/arduino/analog/pin
 ```
