@@ -25,7 +25,7 @@ GET http://device.local/arduino/mode/pin/value
 ```
 ## read_all(device)
 ```
-GET http://device.local/arduino/all
+GET http://device.local/arduino/all/0
 ```
 ## digital_read_all(device)
 ```
