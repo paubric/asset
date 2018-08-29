@@ -21,37 +21,37 @@ Particle Accelerator Observation Tool
 # Bridge API Documentation
 ## Read All
 ```
-rtu-name.local/arduino
+GET http://rtu-name.local/arduino
 ```
 ## Digital Read All
 ```
-rtu-name.local/arduino/digital
+GET http://rtu-name.local/arduino/digital
 ```
 ## Digital Read Pin
 ```
-rtu-name.local/arduino/digital/pin
+GET http://rtu-name.local/arduino/digital/pin
 ```
 ## Digital Write
 ```
-rtu-name.local/arduino/digital/pin/value
+GET http://rtu-name.local/arduino/digital/pin/value
 ```
 ## Analog Read All
 ```
-rtu-name.local/arduino/analog
+GET http://rtu-name.local/arduino/analog
 ```
 ## Analog Read Pin
 ```
-rtu-name.local/arduino/analog/pin
+GET http://rtu-name.local/arduino/analog/pin
 ```
 ## Analog Write
 ```
-rtu-name.local/arduino/analog/pin/value
+GET http://rtu-name.local/arduino/analog/pin/value
 ```
 ## Send Pulse
 ```
-rtu-name.local/arduino/pulse/pin/value
+GET http://rtu-name.local/arduino/pulse/pin/value
 ```
 ## Set Pin
 ```
-rtu-name.local/arduino/mode/pin/value
+GET http://rtu-name.local/arduino/mode/pin/value
 ```
