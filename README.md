@@ -31,7 +31,7 @@ GET http://rtu-name.local/arduino/digital
 ```
 GET http://rtu-name.local/arduino/digital/pin
 ```
-## Digital Write
+## Digital Write Pin
 ```
 GET http://rtu-name.local/arduino/digital/pin/value
 ```
@@ -43,7 +43,7 @@ GET http://rtu-name.local/arduino/analog
 ```
 GET http://rtu-name.local/arduino/analog/pin
 ```
-## Analog Write
+## Analog Write Pin
 ```
 GET http://rtu-name.local/arduino/analog/pin/value
 ```
