@@ -19,39 +19,39 @@ Particle Accelerator Observation Tool
 - Recive and send live camera input
 
 # Bridge API Documentation
-## Read All
+## set_pin(device, pin, value)
+```
+GET http://rtu-name.local/arduino/mode/pin/value
+```
+## read_all(device)
 ```
 GET http://rtu-name.local/arduino
 ```
-## Digital Read All
+## digital_read_all(device)
 ```
 GET http://rtu-name.local/arduino/digital
 ```
-## Digital Read Pin
+## digital_read_pin(device, pin)
 ```
 GET http://rtu-name.local/arduino/digital/pin
 ```
-## Digital Write Pin
+## digital_write_pin(device, pin, value)
 ```
 GET http://rtu-name.local/arduino/digital/pin/value
 ```
-## Analog Read All
+## analog_read_all(device)
 ```
 GET http://rtu-name.local/arduino/analog
 ```
-## Analog Read Pin
+## analog_read_pin(device, pin)
 ```
 GET http://rtu-name.local/arduino/analog/pin
 ```
-## Analog Write Pin
+## analog_write_pin(device, pin, value)
 ```
 GET http://rtu-name.local/arduino/analog/pin/value
 ```
-## Send Pulse
+## send_pulse(device, pin, value)
 ```
 GET http://rtu-name.local/arduino/pulse/pin/value
-```
-## Set Pin
-```
-GET http://rtu-name.local/arduino/mode/pin/value
 ```
