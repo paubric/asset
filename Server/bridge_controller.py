@@ -5,7 +5,7 @@ def set_pin(device, pin, value):
     return r.json()
 
 def read_all(device):
-    r = requests.get('http://'+device+'.local'+'/arduino/all')
+    r = requests.get('http://'+device+'.local'+'/arduino/all/0')
     return r.json()
 
 def digital_read_all(device):
