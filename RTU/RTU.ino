@@ -6,6 +6,7 @@
  *  - analog/{pin}/(optional - analogWrite){value}
  *  - digital/{pin}/{value}
  *  - mode/{pin}/{input/output}
+ *  - all/0
 */
 
 // libraries
@@ -171,16 +172,6 @@ void analogCommand(BridgeClient client) {
     client.print(F("}"));
     return;
   }
-//  if(pin=="") {
-//    for(int i = 0;i<6;++i) {
-//      value = analogRead(i);
-//      client.print(F("{\"pin\":"));
-//      client.print(i);
-//      client.print(F(",\"value\":"));
-//      client.print(value);
-//      client.print(F("}"));
-//    }
-//  }
 }
 
 void modeCommand(BridgeClient client) {
