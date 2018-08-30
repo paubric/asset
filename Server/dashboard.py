@@ -1,20 +1,24 @@
 from flask import Flask
+from flask_cors import CORS
 import bridge_controller as bc
 import time
 import threading
 import json
 
 app = Flask(__name__)
+CORS(app)
 device = 'rtua'
 sensor_data = []
 visible_item_count = 30
 
-@app.route('/dummy_sensors')
+@app.route('/sensors')
 def send_sensors():
     dict = {
         'data': sensor_data[-visible_item_count:]
     }
     return json.dumps(dict)
+
+
 
 @app.route('/dummy_sensors')
 def send_dummy_sensors():
