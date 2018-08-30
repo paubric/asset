@@ -9,10 +9,17 @@ device = 'rtua'
 sensor_data = []
 visible_item_count = 30
 
-@app.route('/sensors')
+@app.route('/dummy_sensors')
 def send_sensors():
     dict = {
         'data': sensor_data[-visible_item_count:]
+    }
+    return json.dumps(dict)
+
+@app.route('/dummy_sensors')
+def send_dummy_sensors():
+    dict = {
+        'data': [[123, 125, 142, 124], [254, 257, 254, 261]]
     }
     return json.dumps(dict)
 
@@ -25,7 +32,7 @@ def regular_get_sensors():
         print('[*] Updated sensor_data:', sensor_data)
         time.sleep(1)
 
-threading.Thread(target=regular_get_sensors).start()
+#threading.Thread(target=regular_get_sensors).start()
 
 if __name__ == '__main__':
     app.run()
