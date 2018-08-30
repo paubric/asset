@@ -10,13 +10,16 @@ Particle Accelerator Observation Tool
 - Master programming for bridge communication
 - Testing Master-RTU communcation link
 ## Day 3 - Aug 29
-- RTU Board porting (Yun -> Yun Mini)
-- Dashboard Interface
+- RTU Board porting (Yun -> Yun Mini) (1/2)
+- Dashboard Interface (1/3)
 - Create function that reads all analog ins
-- Create function that sends N pulses
 - Brand identity
-- Motor and sensor interfacing
+## Day 4 - Aug 30
+- RTU Board porting (Yun -> Yun Mini) (2/2)
+- Dashboard Interface (2/3)
+- Create function that sends N pulses
 - Recive and send live camera input
+- Motor and sensor interfacing
 
 # Bridge API Documentation
 ## set_pin(device, pin, value)
