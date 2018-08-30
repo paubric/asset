@@ -17,6 +17,7 @@ app = dash.Dash(__name__)
 app.layout = html.Div(
     [
         dcc.Graph(id='live-graph', animate=True),
+        dcc.Graph(id='live-graph2', animate=True),
         dcc.Interval(
             id='graph-update',
             interval=1*1000
@@ -38,8 +39,26 @@ def update_graph_scatter():
             )
 
     return {'data': [data],'layout' : go.Layout(xaxis=dict(range=[min(X),max(X)]),
-                                                yaxis=dict(range=[min(Y),max(Y)]),)}
+                                                yaxis=dict(range=[min(Y),max(Y)]),
+                                                title='Temperature Readings')}
 
+
+@app.callback(Output('live-graph2', 'figure'),
+              events=[Event('graph-update', 'interval')])
+def update_graph_scatter():
+    X.append(X[-1]+1)
+    Y.append(Y[-1]+Y[-1]*random.uniform(-0.1,0.1))
+
+    data = plotly.graph_objs.Scatter(
+            x=list(X),
+            y=list(Y),
+            name='Scatter',
+            mode= 'lines+markers'
+            )
+
+    return {'data': [data],'layout' : go.Layout(xaxis=dict(range=[min(X),max(X)]),
+                                                yaxis=dict(range=[min(Y),max(Y)]),
+                                                title='Pressure Readings')}
 
 
 if __name__ == '__main__':

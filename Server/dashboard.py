@@ -1,42 +1,65 @@
-from flask import Flask
-from flask_cors import CORS
-import bridge_controller as bc
-import time
-import threading
-import json
+import dash
+from dash.dependencies import Output, Event
+import dash_core_components as dcc
+import dash_html_components as html
+import plotly
+import random
+import plotly.graph_objs as go
+from collections import deque
 
-app = Flask(__name__)
-CORS(app)
-device = 'rtua'
-sensor_data = []
-visible_item_count = 30
-
-@app.route('/sensors')
-def send_sensors():
-    dict = {
-        'data': sensor_data[-visible_item_count:]
-    }
-    return json.dumps(dict)
+X = deque(maxlen=20)
+X.append(1)
+Y = deque(maxlen=20)
+Y.append(1)
 
 
+app = dash.Dash(__name__)
+app.layout = html.Div(
+    [
+        dcc.Graph(id='live-graph', animate=True),
+        dcc.Graph(id='live-graph2', animate=True),
+        dcc.Interval(
+            id='graph-update',
+            interval=1*1000
+        ),
+    ]
+)
 
-@app.route('/dummy_sensors')
-def send_dummy_sensors():
-    dict = {
-        'data': [[123, 125, 142, 124], [254, 257, 254, 261]]
-    }
-    return json.dumps(dict)
+@app.callback(Output('live-graph', 'figure'),
+              events=[Event('graph-update', 'interval')])
+def update_graph_scatter():
+    X.append(X[-1]+1)
+    Y.append(Y[-1]+Y[-1]*random.uniform(-0.1,0.1))
 
-def regular_get_sensors():
-    while True:
-        print('[*] Updating sensor_data...')
-        new_data_array = bc.analog_read_all(device)['analog']
-        new_data = [new_data_array[i]['value'] for i in range(1, 5)]
-        sensor_data.append(new_data)
-        print('[*] Updated sensor_data:', sensor_data)
-        time.sleep(1)
+    data = plotly.graph_objs.Scatter(
+            x=list(X),
+            y=list(Y),
+            name='Scatter',
+            mode= 'lines+markers'
+            )
 
-#threading.Thread(target=regular_get_sensors).start()
+    return {'data': [data],'layout' : go.Layout(xaxis=dict(range=[min(X),max(X)]),
+                                                yaxis=dict(range=[min(Y),max(Y)]),
+                                                title='Temperature Readings')}
+
+
+@app.callback(Output('live-graph2', 'figure'),
+              events=[Event('graph-update', 'interval')])
+def update_graph_scatter():
+    X.append(X[-1]+1)
+    Y.append(Y[-1]+Y[-1]*random.uniform(-0.1,0.1))
+
+    data = plotly.graph_objs.Scatter(
+            x=list(X),
+            y=list(Y),
+            name='Scatter',
+            mode= 'lines+markers'
+            )
+
+    return {'data': [data],'layout' : go.Layout(xaxis=dict(range=[min(X),max(X)]),
+                                                yaxis=dict(range=[min(Y),max(Y)]),
+                                                title='Pressure Readings')}
+
 
 if __name__ == '__main__':
-    app.run()
+    app.run_server(debug=True)
