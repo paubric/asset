@@ -7,6 +7,7 @@
  *  - digital/{pin}/{value}
  *  - mode/{pin}/{input/output}
  *  - all/0
+ *  # SETTING UP FOR PULSE COMMAND
 */
 
 // libraries
@@ -16,6 +17,19 @@
 
 // creating server object
 BridgeServer server;
+
+void printJSON(BridgeClient client, int pin, int value, int stopval) {
+  client.print(F("{\"pin\":"));
+  client.print(pin);
+  client.print(F(",\"value\":"));
+  client.print(value);
+  if(stopval==-1) {
+    client.print(F("}"));
+  } else {
+    if(pin<stopval) client.print(F("},"));
+    else client.print(F("}"));
+  }
+}
 
 void setup() {
   // starting Bridge
@@ -49,7 +63,9 @@ void process(BridgeClient client) {
     modeCommand(client);
   } else if(command=="all") {
     allCommand(client);
-  }
+  } //else if(command=="pulse") {
+//    
+//  }
   
 }
 
@@ -63,24 +79,14 @@ void allCommand(BridgeClient client) {
     client.print(F("{\"digital\":["));
     for(int i = 2;i<=13;++i) {
         value = digitalRead(i);
-        client.print(F("{\"pin\":"));
-        client.print(i);
-        client.print(F(",\"value\":"));
-        client.print(value);
-        if(i<13) client.print(F("},"));
-        else client.print(F("}"));
+        printJSON(client,i,value,13);
     }
     client.print(F("],"));
     // printing all analog pins
     client.print(F("\"analog\":["));
     for(int i = 0;i<=5;++i) {
         value = analogRead(i);
-        client.print(F("{\"pin\":"));
-        client.print(i);
-        client.print(F(",\"value\":"));
-        client.print(value);
-        if(i<5) client.print(F("},"));
-        else client.print(F("}"));
+        printJSON(client,i,value,5);
       }
     client.print(F("]}"));
     return;
@@ -94,15 +100,12 @@ void digitalCommand(BridgeClient client) {
 
   // printing all digital pins if input is -1
   if(pin==-1) {
+    client.print(F("{\"digital\":["));
     for(int i = 2;i<=13;++i) {
       value = digitalRead(i);
-      client.print(F("{\"pin\":"));
-      client.print(i);
-      client.print(F(",\"value\":"));
-      client.print(value);
-      if(i<13) client.print(F("},"));
-      else client.print(F("}"));
+      printJSON(client,i,value,13);
     }
+    client.print(F("]}"));
     return;
   }
 
@@ -110,20 +113,12 @@ void digitalCommand(BridgeClient client) {
     value = client.parseInt();
     digitalWrite(pin, value);
     // printing in a json friendly format
-    client.print(F("{\"pin\":"));
-    client.print(pin);
-    client.print(F(",\"value\":"));
-    client.print(value);
-    client.print(F("}"));
+    printJSON(client,pin,value,-1);
     return;
   } else {
     value = digitalRead(pin);
     // printing in a json friendly format
-    client.print(F("{\"pin\":"));
-    client.print(pin);
-    client.print(F(",\"value\":"));
-    client.print(value);
-    client.print(F("}"));
+    printJSON(client,pin,value,-1);
     return;
   }
 }
@@ -135,15 +130,12 @@ void analogCommand(BridgeClient client) {
 
   // printing all analog pins if input is -1
   if(pin==-1) {
+    client.print(F("{\"analog\":["));
     for(int i = 0;i<=5;++i) {
       value = analogRead(i);
-      client.print(F("{\"pin\":"));
-      client.print(i);
-      client.print(F(",\"value\":"));
-      client.print(value);
-      if(i<5) client.print(F("},"));
-      else client.print(F("}"));
+      printJSON(client,i,value,5);
     }
+    client.print(F("]}"));
     return;
   }
   
@@ -154,22 +146,14 @@ void analogCommand(BridgeClient client) {
     analogWrite(pin, value);
 
     // printing in a json friendly format
-    client.print(F("{\"pin\":"));
-    client.print(pin);
-    client.print(F(",\"value\":"));
-    client.print(value);
-    client.print(F("}"));
+    printJSON(client,pin,value,-1);
     return;
   } else {
     // reading analog value
     value = analogRead(pin);
 
     // printing in a json friendly format
-    client.print(F("{\"pin\":"));
-    client.print(pin);
-    client.print(F(",\"value\":"));
-    client.print(value);
-    client.print(F("}"));
+    printJSON(client,pin,value,-1);
     return;
   }
 }
@@ -215,3 +199,7 @@ void modeCommand(BridgeClient client) {
     client.print(pin);
     client.println(F(",\"value\":\"invalid\"}"));
 }
+
+//void commandPulse(BridgeClient client) {
+//  
+//}
