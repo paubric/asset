@@ -7,6 +7,7 @@
  *  - digital/{pin}/{value}
  *  - mode/{pin}/{input/output}
  *  - all/0
+ *  # SETTING UP FOR PULSE COMMAND
 */
 
 // libraries
@@ -62,7 +63,9 @@ void process(BridgeClient client) {
     modeCommand(client);
   } else if(command=="all") {
     allCommand(client);
-  }
+  } //else if(command=="pulse") {
+//    
+//  }
   
 }
 
@@ -96,8 +99,8 @@ void digitalCommand(BridgeClient client) {
   pin = client.parseInt();
 
   // printing all digital pins if input is -1
-  client.print(F("{\"digital\":["));
   if(pin==-1) {
+    client.print(F("{\"digital\":["));
     for(int i = 2;i<=13;++i) {
       value = digitalRead(i);
       printJSON(client,i,value,13);
@@ -126,8 +129,8 @@ void analogCommand(BridgeClient client) {
   pin = client.parseInt();
 
   // printing all analog pins if input is -1
-  client.print(F("{\"analog\":["));
   if(pin==-1) {
+    client.print(F("{\"analog\":["));
     for(int i = 0;i<=5;++i) {
       value = analogRead(i);
       printJSON(client,i,value,5);
@@ -196,3 +199,7 @@ void modeCommand(BridgeClient client) {
     client.print(pin);
     client.println(F(",\"value\":\"invalid\"}"));
 }
+
+//void commandPulse(BridgeClient client) {
+//  
+//}
