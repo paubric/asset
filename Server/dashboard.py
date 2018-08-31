@@ -8,6 +8,7 @@ import random
 import plotly.graph_objs as go
 from collections import deque
 import bridge_controller as bc
+import numpy as np
 
 X_temp = deque(maxlen=20)
 X_temp.append(1)
@@ -27,8 +28,22 @@ Y_conc = deque(maxlen=20)
 
 app = dash.Dash(__name__, processes=4)
 
+def get_stats(X):
+    min = str(round(np.min(X), 2))
+    max = str(round(np.max(X), 2))
+    std = str(round(np.std(X), 2))
+    avg = str(round(np.mean(X), 2))
+    med = str(round(np.median(X), 2))
+    return min, max, std, avg, med
+
 app.layout = html.Div(
     [
+        html.H1('PARROT'),
+        html.H2('Particle Accelerator Observation Tool'),
+        html.P('Stats here', id='live-graph-stats'),
+        html.P('Stats here', id='live-graph-stats2'),
+        html.P('Stats here', id='live-graph-stats3'),
+        html.P('Stats here', id='live-graph-stats4'),
         dcc.Graph(id='live-graph'),
         dcc.Graph(id='live-graph2'),
         dcc.Graph(id='live-graph3'),
@@ -56,6 +71,17 @@ def update_graph_scatter():
 
     return {'data': [data]}
 
+@app.callback(
+    Output('live-graph-stats', 'children'),
+    events=[Event('graph-update', 'interval')])
+def display_stats():
+    stats = get_stats(Y_temp)
+    stats_string = 'Stats for last 20 samples:\n'+ \
+        'min: '+stats[0]+'\nmax: '+stats[1]+'\nstd: '+stats[2]+'\navg: '+stats[3]+'\nmed: '+stats[4]
+    print(stats_string)
+    return stats_string
+
+
 @app.callback(Output('live-graph2', 'figure'),
               events=[Event('graph-update', 'interval')])
 def update_graph_scatter():
@@ -70,6 +96,16 @@ def update_graph_scatter():
             )
 
     return {'data': [data]}
+
+@app.callback(
+    Output('live-graph-stats2', 'children'),
+    events=[Event('graph-update', 'interval')])
+def display_stats():
+    stats = get_stats(Y_pres)
+    stats_string = 'Stats for last 20 samples:\n'+ \
+        'min: '+stats[0]+'\nmax: '+stats[1]+'\nstd: '+stats[2]+'\navg: '+stats[3]+'\nmed: '+stats[4]
+    print(stats_string)
+    return stats_string
 
 @app.callback(Output('live-graph3', 'figure'),
               events=[Event('graph-update', 'interval')])
@@ -86,6 +122,16 @@ def update_graph_scatter():
 
     return {'data': [data]}
 
+@app.callback(
+    Output('live-graph-stats3', 'children'),
+    events=[Event('graph-update', 'interval')])
+def display_stats():
+    stats = get_stats(Y_humi)
+    stats_string = 'Stats for last 20 samples:\n'+ \
+        'min: '+stats[0]+'\nmax: '+stats[1]+'\nstd: '+stats[2]+'\navg: '+stats[3]+'\nmed: '+stats[4]
+    print(stats_string)
+    return stats_string
+
 @app.callback(Output('live-graph4', 'figure'),
               events=[Event('graph-update', 'interval')])
 def update_graph_scatter():
@@ -101,6 +147,15 @@ def update_graph_scatter():
 
     return {'data': [data]}
 
+@app.callback(
+    Output('live-graph-stats4', 'children'),
+    events=[Event('graph-update', 'interval')])
+def display_stats():
+    stats = get_stats(Y_conc)
+    stats_string = 'Stats for last 20 samples:\n'+ \
+        'min: '+stats[0]+'\nmax: '+stats[1]+'\nstd: '+stats[2]+'\navg: '+stats[3]+'\nmed: '+stats[4]
+    print(stats_string)
+    return stats_string
 
 if __name__ == '__main__':
     app.run_server(debug=True)
