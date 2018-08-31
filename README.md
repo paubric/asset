@@ -17,9 +17,12 @@ Particle Accelerator Observation Tool
 ## Day 4 - Aug 30
 - RTU Board porting (Yun -> Yun Mini) (2/2)
 - Dashboard Interface (2/3)
+- Motor and sensor interfacing
+## Day 5 - Aug 31
+- Dashboard Interface (3/3)
 - Create function that sends N pulses
 - Recive and send live camera input
-- Motor and sensor interfacing
+
 
 # Bridge API Documentation
 ## set_pin(device, pin, value)
