@@ -21,7 +21,8 @@ Particle Accelerator Observation Tool
 ## Day 5 - Aug 31
 - Dashboard Interface (3/3)
 - Create function that sends N pulses
-- Recive and send live camera input
+- Recive and send live camera input(2/2)
+- Test graphs with sensors
 
 
 # Bridge API Documentation
