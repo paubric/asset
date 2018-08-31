@@ -1,4 +1,4 @@
-# Install `motion`:
+# Install motion:
 ``` sudo apt-get install motion ```
 
 # Creating motion files:
@@ -17,5 +17,4 @@ output_pictures off
 ```
 
 # Run motion and connect to the stream:
-``` motion ```
-And now connect to 127.0.0.1:8081 and the video should be there!
+Run ``` motion ``` in the terminal and now connect to 127.0.0.1:8081 and the video should be there!
