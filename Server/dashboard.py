@@ -16,12 +16,15 @@ Y.append(1)
 app = dash.Dash(__name__)
 app.layout = html.Div(
     [
-        dcc.Graph(id='live-graph', animate=True),
-        dcc.Graph(id='live-graph2', animate=True),
-        dcc.Interval(
-            id='graph-update',
-            interval=1*1000
-        ),
+        html.Div([
+            dcc.Graph(id='live-graph', animate=True),
+            dcc.Graph(id='live-graph1', animate=True),
+            dcc.Interval(
+                id='graph-update',
+                interval=1*1000
+            )
+        ],style={"width":1000,"margin":'auto auto'}),
+        html.Img(id="img",src="http://192.168.162.254:10000/cgi-bin/video.cgi?msubmenu=mjpg",width="1024",height="768")
     ]
 )
 
@@ -42,9 +45,8 @@ def update_graph_scatter():
                                                 yaxis=dict(range=[min(Y),max(Y)]),
                                                 title='Temperature Readings')}
 
-
-@app.callback(Output('live-graph2', 'figure'),
-              events=[Event('graph-update', 'interval')])
+@app.callback(Output('live-graph1', 'figure'),
+                  events=[Event('graph-update', 'interval')])
 def update_graph_scatter():
     X.append(X[-1]+1)
     Y.append(Y[-1]+Y[-1]*random.uniform(-0.1,0.1))
@@ -58,7 +60,7 @@ def update_graph_scatter():
 
     return {'data': [data],'layout' : go.Layout(xaxis=dict(range=[min(X),max(X)]),
                                                 yaxis=dict(range=[min(Y),max(Y)]),
-                                                title='Pressure Readings')}
+                                                title='Temperature Readings')}
 
 
 if __name__ == '__main__':
