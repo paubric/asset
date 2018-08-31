@@ -60,7 +60,7 @@ def update_graph_scatter():
 
     return {'data': [data],'layout' : go.Layout(xaxis=dict(range=[min(X),max(X)]),
                                                 yaxis=dict(range=[min(Y),max(Y)]),
-                                                title='Temperature Readings')}
+                                                title='Humidity Readings')}
 
 
 if __name__ == '__main__':
