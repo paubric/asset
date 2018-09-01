@@ -44,23 +44,27 @@ app.layout = html.Div(
         ],style={"border-right":"2px solid blue"}),
         html.Div([
             html.Div([
-                html.Img(id="cam",src="http://192.168.162.254:10000/cgi-bin/video.cgi?msubmenu=mjpg",width="600",height="500",style={"display":"block"}),
-                html.Img(id="usbcam",src="http://127.0.0.1:8081",width="600",height="500")
+                html.Img(id="cam",src="http://192.168.162.254:10000/cgi-bin/video.cgi?msubmenu=mjpg",width="420",height="350",style={"display":"block",'margin-top':20}),
+                html.Img(id="usbcam",src="http://127.0.0.1:8081",width="420",height="350",style={'margin-top':50})
             ]),
             html.Div([
-                html.P('Stats here', id='live-graph-stats'),
-                dcc.Graph(id='live-graph',style={"height":250},config={'displayModeBar':False}),
-                html.P('Stats here', id='live-graph-stats2'),
-                dcc.Graph(id='live-graph2',style={"height":250},config={'displayModeBar':False}),
-                html.P('Stats here', id='live-graph-stats3'),
-                dcc.Graph(id='live-graph3',style={"height":250},config={'displayModeBar':False}),
-                html.P('Stats here', id='live-graph-stats4'),
-                dcc.Graph(id='live-graph4',style={"height":250},config={'displayModeBar':False}),
+                html.Div([
+                    html.P('Stats here', id='live-graph-stats'),
+                    dcc.Graph(id='live-graph',style={"width":510,"height":350,"margin":0},config={'displayModeBar':False}),
+                    html.P('Stats here', id='live-graph-stats2'),
+                    dcc.Graph(id='live-graph2',style={"width":510,"height":350},config={'displayModeBar':False})
+                ]),
+                html.Div([
+                    html.P('Stats here', id='live-graph-stats3'),
+                    dcc.Graph(id='live-graph3',style={"width":510,"height":350},config={'displayModeBar':False}),
+                    html.P('Stats here', id='live-graph-stats4'),
+                    dcc.Graph(id='live-graph4',style={"width":510,"height":350},config={'displayModeBar':False})
+                ]),
                 dcc.Interval(
                     id='graph-update',
                     interval=2*1000
                 )
-            ])
+            ],style={"display":"grid","grid-template-columns":"50% 50%"})
         ],style={"padding":20,"display":"grid","grid-template-columns":"auto auto"}),
 
     ],style={"display":"grid","grid-template-columns":"225px auto"})

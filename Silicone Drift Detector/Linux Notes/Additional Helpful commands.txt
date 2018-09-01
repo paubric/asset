@@ -1,0 +1,11 @@
+Create gzipped tar:
+
+tar czvf mydirectory.tgz mydirectory
+
+
+Save gcc compiler errors:
+
+make 2> gccError.log
+
+
+

@@ -1,0 +1,6 @@
+20140925
+
+Set Linux Terminal to 80 charaters across
+
+echo -e "\e[8;24;80t"
+

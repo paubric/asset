@@ -1,0 +1,27 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$class_c_console_helper.html#a2864917a8b61f57bc0fa5d37094682c4" title="Processes configuration packets." alt="" coords="191,5,427,32"/>
+<area shape="rect" id="node5" href="$class_c_console_helper.html#a0799d0bf83f71a0e91a299db51242358" title="CConsoleHelper::CreateMCAData" alt="" coords="201,56,418,83"/>
+<area shape="rect" id="node11" href="$class_c_console_helper.html#ae8381024a7f25e3eca641cab53134ae5" title="Saves a spectrum data string to a default file (SpectrumData.mca)." alt="" coords="171,107,447,133"/>
+<area shape="rect" id="node14" href="$class_c_ascii_cmd_utilities.html#a7ffbd5fa471a708f83e6bbdc889e4dfe" title="Reads a DPP configuration from a file." alt="" coords="199,157,419,184"/>
+<area shape="rect" id="node21" href="$class_c_ascii_cmd_utilities.html#a13efe427b2c68ac63be2867bfb47b7e5" title="Reads a SCA configuration from a file." alt="" coords="197,208,421,235"/>
+<area shape="rect" id="node23" href="$class_c_d_p5_status.html#a527a4109da4441034900bb40a90fb454" title="CDP5Status::DP5_Dx_OptionFlags" alt="" coords="196,259,423,285"/>
+<area shape="rect" id="node25" href="$class_c_d_p5_status.html#a94d1aa88585e0cfc412f72c443d22847" title="Convert DP4_FORMAT_STATUS data into a status display string." alt="" coords="497,335,743,361"/>
+<area shape="rect" id="node27" href="$class_c_d_p5_status.html#abf356d18697536d1ccdb49bc3279c3b6" title="CDP5Status::GetStatusValueStrings" alt="" coords="503,399,737,425"/>
+<area shape="rect" id="node29" href="$class_c_d_p5_status.html#af3cc4e35f9786e863d38de800c5b65fc" title="Convert a DPP diagnostic data packet into DiagDataType data." alt="" coords="507,487,733,513"/>
+<area shape="rect" id="node31" href="$class_c_d_p5_status.html#a1a5684463827da722cb879f4a7db923e" title="Convert DiagDataType data into a diagnostic display string." alt="" coords="511,664,729,691"/>
+<area shape="rect" id="node33" href="$class_c_d_p5_status.html#ac27c6f20395d114f1cba39c52d8e8c71" title="Format a high voltage power value." alt="" coords="229,765,390,792"/>
+<area shape="rect" id="node38" href="$class_c_d_p5_status.html#a237ac6b169306f1d492de1850e2273d4" title="Format a pc5 power value." alt="" coords="224,816,395,843"/>
+<area shape="rect" id="node42" href="$class_c_d_p5_status.html#a8e5f5782e85633b16f391111c6cc3d20" title="Format a pc5 temperature value." alt="" coords="219,664,399,691"/>
+<area shape="rect" id="node46" href="$class_c_d_p5_status.html#ade8d8e46636777945d9e6bab5fe8dff7" title="Format a hexadecimal value." alt="" coords="235,512,383,539"/>
+<area shape="rect" id="node51" href="$class_c_d_p5_status.html#a31a1a798fbfb6f586d887d6d15440e4a" title="Format a long value." alt="" coords="236,613,383,640"/>
+<area shape="rect" id="node54" href="$class_c_d_p5_status.html#ac11f26d9cebc9f8958dce55cc83ce20d" title="Format a version number value." alt="" coords="221,715,398,741"/>
+<area shape="rect" id="node58" href="$class_c_d_p5_status.html#aa41ae22632e334da31911d180d5a3e97" title="Format an string array from a data byte array of values." alt="" coords="205,867,414,893"/>
+<area shape="rect" id="node60" href="$class_c_d_p5_status.html#a3f2acc5afec208d44d369c955d1837ba" title="Saves a data string to a default file (vcDP5_Data.txt)." alt="" coords="196,917,423,944"/>
+<area shape="rect" id="node62" href="$class_c_dpp_utilities.html#a2831bcbcab47c1aba305219fae7177fd" title="Convert a byte version value into a double." alt="" coords="191,968,428,995"/>
+<area shape="rect" id="node64" href="$class_c_dpp_utilities.html#ae968793aa4b33563a2d3b8c288042a37" title="Convert a byte version value into a string." alt="" coords="194,360,425,387"/>
+<area shape="rect" id="node7" href="$gcc_dpp_console_8cpp.html#acfb9d0cb94169f2ee11f4a6495acd422" title="SaveSpectrumFile" alt="" coords="557,81,683,108"/>
+<area shape="rect" id="node9" href="$gcc_dpp_console_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97" title="main" alt="" coords="792,107,843,133"/>
+<area shape="rect" id="node16" href="$gcc_dpp_console_8cpp.html#aef99993055d887ea663c1ce0c3a87140" title="ReadConfigFile" alt="" coords="565,132,675,159"/>
+<area shape="rect" id="node19" href="$gcc_dpp_console_8cpp.html#acf695c5575fa42eed12211f2f841d5b7" title="SendConfigFileToDpp" alt="" coords="547,183,693,209"/>
+<area shape="rect" id="node36" href="$class_c_d_p5_status.html#a8f4f45da08b98bd6b2ed6d337c825287" title="Convert PX5 Options into a display string." alt="" coords="517,715,723,741"/>
+</map>
