@@ -52,7 +52,8 @@ app.layout = html.Div(
             id='graph-update',
             interval=2*1000
         ),
-        html.Img(id="img",src="http://192.168.162.254:10000/cgi-bin/video.cgi?msubmenu=mjpg",width="1024",height="768")
+        html.Img(id="cam",src="http://192.168.162.254:10000/cgi-bin/video.cgi?msubmenu=mjpg",width="1024",height="768")
+        html.Img(id="usbcam",src="http://127.0.0.1:8081",width="1024",height="768")
     ]
 )
 
