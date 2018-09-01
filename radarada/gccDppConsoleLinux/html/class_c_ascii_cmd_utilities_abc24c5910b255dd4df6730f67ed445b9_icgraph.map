@@ -1,9 +1,0 @@
-<map id="G" name="G">
-<area shape="rect" id="node3" href="$class_c_ascii_cmd_utilities.html#a7ffbd5fa471a708f83e6bbdc889e4dfe" title="Reads a DPP configuration from a file." alt="" coords="265,31,485,57"/>
-<area shape="rect" id="node11" href="$class_c_ascii_cmd_utilities.html#a13efe427b2c68ac63be2867bfb47b7e5" title="Reads a SCA configuration from a file." alt="" coords="263,81,487,108"/>
-<area shape="rect" id="node13" href="$class_c_send_command.html#ad22a472aded39706196687d87b1a346a" title="Creates a DPP command that does not require additional processing." alt="" coords="280,132,469,159"/>
-<area shape="rect" id="node15" href="$class_c_send_command.html#a02a11a2c0ae2794541961173068be69a" title="Creates a DPP command that requires configuration data options processing." alt="" coords="259,183,491,209"/>
-<area shape="rect" id="node5" href="$gcc_dpp_console_8cpp.html#aef99993055d887ea663c1ce0c3a87140" title="ReadConfigFile" alt="" coords="557,5,667,32"/>
-<area shape="rect" id="node9" href="$gcc_dpp_console_8cpp.html#acf695c5575fa42eed12211f2f841d5b7" title="SendConfigFileToDpp" alt="" coords="539,56,685,83"/>
-<area shape="rect" id="node7" href="$gcc_dpp_console_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97" title="main" alt="" coords="733,5,784,32"/>
-</map>

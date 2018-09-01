@@ -1,7 +1,0 @@
-<map id="G" name="G">
-<area shape="rect" id="node3" href="$_send_command_8h.html" title="SendCommand.h" alt="" coords="160,80,283,107"/>
-<area shape="rect" id="node22" href="$stringex_8h.html" title="stringex.h" alt="" coords="449,229,527,256"/>
-<area shape="rect" id="node5" href="$_dpp_const_8h.html" title="DppConst.h" alt="" coords="5,229,96,256"/>
-<area shape="rect" id="node7" href="$_d_p5_protocol_8h.html" title="DP5Protocol.h" alt="" coords="96,155,203,181"/>
-<area shape="rect" id="node11" href="$_ascii_cmd_utilities_8h.html" title="AsciiCmdUtilities.h" alt="" coords="227,155,359,181"/>
-</map>

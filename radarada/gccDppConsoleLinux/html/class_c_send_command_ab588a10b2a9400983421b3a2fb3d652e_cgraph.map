@@ -1,4 +1,0 @@
-<map id="G" name="G">
-<area shape="rect" id="node3" href="$class_c_send_command.html#ad2b1dfdedc75707f0b50448df5fc036f" title="Creates a packet output buffer from a command byte data array." alt="" coords="304,5,507,32"/>
-<area shape="rect" id="node5" href="$class_c_send_command.html#a7e0bf1fe4d82122e0e930f479b8b9d9d" title="Packet checksum test for commands with data." alt="" coords="277,56,533,83"/>
-</map>

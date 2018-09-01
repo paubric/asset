@@ -1,6 +1,0 @@
-<map id="G" name="G">
-<area shape="rect" id="node3" href="$class_c_console_helper.html#a6900f04bbc6058a90e9ab2800220e779" title="LibUsb send a command that does not require additional processing." alt="" coords="176,5,435,32"/>
-<area shape="rect" id="node5" href="$class_c_console_helper.html#a48a455ff2d4993a4e9b80b06c19ac095" title="LibUsb receive data." alt="" coords="184,56,427,83"/>
-<area shape="rect" id="node7" href="$class_c_console_helper.html#a296dcfaf8d1c7187ac0d1bcfb0c8b556" title="Provides a low resolution text console graph." alt="" coords="203,107,408,133"/>
-<area shape="rect" id="node9" href="$namespacestring_split.html#afe98331f4fa370903ca7cfd521445894" title="stringSplit::Split" alt="" coords="483,107,597,133"/>
-</map>
