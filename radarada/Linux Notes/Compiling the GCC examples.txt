@@ -1,0 +1,26 @@
+20140925
+
+====================================
+Linux (LibUsb): (gccDppConsoleLinux)
+====================================
+0. You must have the libusb-1.0 developers package installed.
+1. Copy the gccDppConsoleLinux project.
+2. Open a terminal to the project directory.
+3. Type "make all" then enter.
+4. Wait until the project compiles.
+5. Login as root (if not already).
+6. Copy the executable to the bin directory. (ex. "cp gccDppConsole /usr/local/bin").
+7. Connect your tuned/configured DPP device to a USB port.
+8. Run the example. (gccDppConsole)
+
+
+=========================================================================
+Portable MinGW32 (LibUsb with WinUSB Backend): (project gccDppConsoleWin)
+=========================================================================
+1. Copy the gccDppConsoleWin project.
+2. Open a MinGW Shell terminal to the project directory.
+3. Run "makeall.bat" or type "mingw32-make all" then enter.
+4. Wait until the project compiles.
+5. Connect your tuned/configured DPP device to a USB port.
+6. Run the example. (gccDppConsole)
+

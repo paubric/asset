@@ -1,0 +1,8 @@
+
+libusb.dll - libusb with WinUSB backend interface library
+
+VC++ 7.1 Runtime Library Support for libusb.dll
+msvcr71.dll Release Application Extension
+msvcr71.pdb Release Program Debug Database
+msvcr71d.dll Debug Application Extension
+msvcr71d.pdb Debug Program Debug Database

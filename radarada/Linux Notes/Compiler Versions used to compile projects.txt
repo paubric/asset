@@ -1,0 +1,54 @@
+20140925
+
+Following is a list of LibUsb projects and compiler versions.
+
+
+====================================
+Linux (LibUsb): (gccDppConsoleLinux)
+====================================
+$ gcc --version
+gcc (GCC) 4.5.2
+Copyright (C) 2010 Free Software Foundation, Inc.
+This is free software; see the source for copying conditions.  There is NO
+warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+
+
+
+=========================================================================
+Portable MinGW32 (LibUsb with WinUSB Backend): (project gccDppConsoleWin)
+=========================================================================
+Z:\PortableApps\CommonFiles\MinGW>gcc --version
+gcc (GCC) 4.8.1
+Copyright (C) 2013 Free Software Foundation, Inc.
+This is free software; see the source for copying conditions.  There is NO
+warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+
+
+
+==========================================================================
+Cygwin32/Cygwin64 (LibUsb with WinUSB Backend): (project gccDppConsoleWin)
+==========================================================================
+(Cygwin64 will be used for Android development also.)
+development@Development ~
+$ gcc --version
+gcc (GCC) 4.8.2
+Copyright (C) 2013 Free Software Foundation, Inc.
+This is free software; see the source for copying conditions.  There is NO
+warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+
+
+
+==============================================================================
+Microsoft Compilers (LibUsb with WinUSB Backend): (project vcDppConsoleLibUsb)
+==============================================================================
+Microsoft Visual Studio 2003 VC7.1 (vcDppConsole_7.1.sln)
+Microsoft Visual Studio 2005 (2008) VC8 (vcDppConsole_8.sln)
+Microsoft Visual Studio 2010 VC10 (vcDppConsole_10.sln)
+
+
+
+================================================================================
+The example LibUsb with WinUSB Backend dynamic and static libraries were compiled with vs2003 VC7.1.
+Therefore LibUsb with WinUSB Backend needs VC7.1 Runtime Library (msvcr71.dll or msvcr71d.dll).
+This was done so that all examples can run the same LibUsb with WinUSB Backend.
+================================================================================

@@ -1,34 +1,38 @@
-# Makefile - gccDppConsole
+# Makefile - gccDppConsoleInet
 
 ifndef CFG
 CFG=Debug
 endif
 CC=gcc
-CFLAGS= 
+CFLAGS=-m32 
 CXX=g++
 CXXFLAGS=$(CFLAGS)
 ifeq "$(CFG)" "Debug"
-CFLAGS+=  -W -I./ -I/usr/include/libusb-1.0 -O0 -fexceptions -I../gccDppConsoleLinux/DeviceIO/ -I../gccDppConsoleLinux/ -g -fno-inline -D_DEBUG -D_CONSOLE 
+CFLAGS+= -W -O0 -fexceptions -I../gccDppConsoleInet/DeviceIO/ -I../gccDppConsoleInet/ -g -fno-inline -D_DEBUG -D_CONSOLE 
 LD=$(CXX) $(CXXFLAGS)
 LDFLAGS=
-LDFLAGS+= 
-LIBS+= -L/usr/local/lib -lusb-1.0
+LDFLAGS+= -L../gccDppConsoleInet/DeviceIO/
+LIBS+=-lstdc++ -lm -lnsl
+# LIBS+=-lstdc++ -lm -static -lnsl -lsocket
+# LIBS+=-lstdc++ -lm -static -lws2_32
 ifndef TARGET
-TARGET=gccDppConsole
+TARGET=gccDppConsoleInet
 endif
 ifeq "$(CFG)" "Release"
-CFLAGS+=  -W -I./ -I/usr/include/libusb-1.0 -O2 -fexceptions -I../gccDppConsoleLinux/DeviceIO/ -I../gccDppConsoleLinux/ -g  -fno-inline   -DNDEBUG -D_CONSOLE 
+CFLAGS+= -W -O2 -fexceptions -I../gccDppConsoleInet/DeviceIO/ -I../gccDppConsoleInet/ -g -fno-inline -DNDEBUG -D_CONSOLE 
 LD=$(CXX) $(CXXFLAGS)
 LDFLAGS=
-LDFLAGS+= 
-LIBS+= -L/usr/local/lib -lusb-1.0
+LDFLAGS+= -L../gccDppConsoleInet/DeviceIO/
+LIBS+=-lstdc++ -lm -lnsl
+# LIBS+=-lstdc++ -lm -static -lnsl -lsocket
+# LIBS+=-lstdc++ -lm -static -lws2_32
 ifndef TARGET
-TARGET=gccDppConsole
+TARGET=gccDppConsoleInet
 endif
 endif
 endif
 ifndef TARGET
-TARGET=gccDppConsole
+TARGET=gccDppConsoleInet
 endif
 .PHONY: all
 all: $(TARGET)
@@ -50,18 +54,20 @@ all: $(TARGET)
 
 SOURCE_FILES= \
 	./ConsoleHelper.cpp \
+	./DeviceIO/NetFinder.cpp \
 	./DeviceIO/AsciiCmdUtilities.cpp \
 	./DeviceIO/DP5Protocol.cpp \
 	./DeviceIO/DP5Status.cpp \
 	./DeviceIO/DppUtilities.cpp \
 	./DeviceIO/ParsePacket.cpp \
 	./DeviceIO/SendCommand.cpp \
-	./DeviceIO/DppLibUsb.cpp \
+	./DeviceIO/DppSocket.cpp \
 	./stringex.cpp \
-	./gccDppConsole.cpp
+	./gccDppConsoleInet.cpp
 
 HEADER_FILES= \
 	./ConsoleHelper.h \
+	./DeviceIO/NetFinder.h \
 	./DeviceIO/AsciiCmdUtilities.h \
 	./DeviceIO/DP5Protocol.h \
 	./DeviceIO/DP5Status.h \
@@ -69,22 +75,22 @@ HEADER_FILES= \
 	./DeviceIO/DppUtilities.h \
 	./DeviceIO/ParsePacket.h \
 	./DeviceIO/SendCommand.h \
-	./DeviceIO/DppLibUsb.h \
-	./DeviceIO/libusb.h \
+	./DeviceIO/DppSocket.h \
 	./stringex.h \
 	./stringSplit.h
 
 OBJ_FILES= \
 	./ConsoleHelper.o \
+	./NetFinder.o \
 	./AsciiCmdUtilities.o \
 	./DP5Protocol.o \
 	./DP5Status.o \
 	./DppUtilities.o \
 	./ParsePacket.o \
 	./SendCommand.o \
-	./DppLibUsb.o \
+	./DppSocket.o \
 	./stringex.o \
-	./gccDppConsole.o 
+	./gccDppConsoleInet.o 
 
 RESOURCE_FILES= \
 
@@ -97,11 +103,11 @@ $(TARGET): $(OBJS)
 
 .PHONY: clean
 clean:
-	-rm -f -v $(OBJS) $(TARGET) gccDppConsole.dep
+	-rm -f -v $(OBJS) $(TARGET) gccDppConsoleInet.dep
 
 .PHONY: depends
 depends:
-	-$(CXX) $(CXXFLAGS) $(CPPFLAGS) -MM $(filter %.c %.cc %.cpp %.cxx,$(SRCS)) > gccDppConsole.dep
+	-$(CXX) $(CXXFLAGS) $(CPPFLAGS) -MM $(filter %.c %.cc %.cpp %.cxx,$(SRCS)) > gccDppConsoleInet.dep
 
--include gccDppConsole.dep
+-include gccDppConsoleInet.dep
 

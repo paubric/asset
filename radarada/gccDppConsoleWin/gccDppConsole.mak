@@ -4,31 +4,31 @@ ifndef CFG
 CFG=Debug
 endif
 CC=gcc
-CFLAGS= 
+CFLAGS=-m32 
 CXX=g++
 CXXFLAGS=$(CFLAGS)
 ifeq "$(CFG)" "Debug"
-CFLAGS+=  -W -I./ -I/usr/include/libusb-1.0 -O0 -fexceptions -I../gccDppConsoleLinux/DeviceIO/ -I../gccDppConsoleLinux/ -g -fno-inline -D_DEBUG -D_CONSOLE 
+CFLAGS+= -W -O0 -fexceptions -I../gccDppConsoleWin/DeviceIO/ -I../gccDppConsoleWin/ -g -fno-inline -D_DEBUG -D_CONSOLE 
 LD=$(CXX) $(CXXFLAGS)
 LDFLAGS=
-LDFLAGS+= 
-LIBS+= -L/usr/local/lib -lusb-1.0
+LDFLAGS+= -L../gccDppConsoleWin/DeviceIO/
+LIBS+=-lstdc++ -lm -static -llibusb
 ifndef TARGET
-TARGET=gccDppConsole
+TARGET=gccDppConsole.exe
 endif
 ifeq "$(CFG)" "Release"
-CFLAGS+=  -W -I./ -I/usr/include/libusb-1.0 -O2 -fexceptions -I../gccDppConsoleLinux/DeviceIO/ -I../gccDppConsoleLinux/ -g  -fno-inline   -DNDEBUG -D_CONSOLE 
+CFLAGS+= -W -O2 -fexceptions -I../gccDppConsoleWin/DeviceIO/ -I../gccDppConsoleWin/ -g -fno-inline -DNDEBUG -D_CONSOLE 
 LD=$(CXX) $(CXXFLAGS)
 LDFLAGS=
-LDFLAGS+= 
-LIBS+= -L/usr/local/lib -lusb-1.0
+LDFLAGS+= -L../gccDppConsoleWin/DeviceIO/
+LIBS+=-lstdc++ -lm -static -llibusb
 ifndef TARGET
-TARGET=gccDppConsole
+TARGET=gccDppConsole.exe
 endif
 endif
 endif
 ifndef TARGET
-TARGET=gccDppConsole
+TARGET=gccDppConsole.exe
 endif
 .PHONY: all
 all: $(TARGET)
