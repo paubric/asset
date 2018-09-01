@@ -1,0 +1,8 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$class_c_console_helper.html#ab87b5aa2827d7149ec35a7b15074a507" title="Populates the configuration command options data structure." alt="" coords="551,5,793,32"/>
+<area shape="rect" id="node5" href="$class_c_console_helper.html#a93b4ff1e4329e7500fc6d4115c0c43f2" title="LibUsb send a command that requires configuration options processing." alt="" coords="521,56,823,83"/>
+<area shape="rect" id="node7" href="$gcc_dpp_console_8cpp.html#a8320e12a512d275ef8743940f93cb260" title="ReadDppConfigurationFromHardware" alt="" coords="237,107,472,133"/>
+<area shape="rect" id="node15" href="$gcc_dpp_console_8cpp.html#a740acfa842c80514f4005b028aa73418" title="DisplayPresets" alt="" coords="299,157,410,184"/>
+<area shape="rect" id="node10" href="$class_c_console_helper.html#a94aaa8f74357d0730957ab4d23246be2" title="Clears configuration readback format flags." alt="" coords="526,107,818,133"/>
+<area shape="rect" id="node13" href="$class_c_console_helper.html#a48a455ff2d4993a4e9b80b06c19ac095" title="LibUsb receive data." alt="" coords="551,157,793,184"/>
+</map>

@@ -1,0 +1,6 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$class_c_console_helper.html#ab87b5aa2827d7149ec35a7b15074a507" title="Populates the configuration command options data structure." alt="" coords="319,5,561,32"/>
+<area shape="rect" id="node5" href="$class_c_console_helper.html#a94aaa8f74357d0730957ab4d23246be2" title="Clears configuration readback format flags." alt="" coords="294,56,586,83"/>
+<area shape="rect" id="node7" href="$class_c_console_helper.html#a93b4ff1e4329e7500fc6d4115c0c43f2" title="LibUsb send a command that requires configuration options processing." alt="" coords="289,107,591,133"/>
+<area shape="rect" id="node9" href="$class_c_console_helper.html#a48a455ff2d4993a4e9b80b06c19ac095" title="LibUsb receive data." alt="" coords="319,157,561,184"/>
+</map>
