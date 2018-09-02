@@ -66,7 +66,7 @@ app.layout = html.Div(
                 )
             ],style={"display":"grid","grid-template-columns":"50% 50%"})
         ],style={"padding":20,"display":"grid","grid-template-columns":"auto auto"}),
-        
+
     ],style={"display":"grid","grid-template-columns":"225px auto"})
 
 @app.callback(Output('live-graph', 'figure'),
