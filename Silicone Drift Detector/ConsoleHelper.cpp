@@ -752,7 +752,7 @@ void CConsoleHelper::SaveSpectrumStringToFile(string strData)
 {
 	int fileNum = 0;
 	FILE  *out;
-	std::string strFilename;
+	string strFilename[100] = {"a","b","c","d","e","f","g","h","i"};
 	string strError;
 	stringex strfn;
 
@@ -761,8 +761,7 @@ void CConsoleHelper::SaveSpectrumStringToFile(string strData)
 	std::ifstream f(strFilename);
 
 	if(f.good()) {
-		strFilename = "SpectrumData" + std::to_string(fileNum) + ".mca";
-		if ( (out = fopen(strFilename.c_str(),"wb")) == (FILE *) NULL)
+		if ( (out = fopen(strFilename[fileNum].c_str(),"wb")) == (FILE *) NULL)
 			strError = strfn.Format("Couldn't open %s for writing.\n", strFilename.c_str());
 		else
 		{
@@ -771,7 +770,7 @@ void CConsoleHelper::SaveSpectrumStringToFile(string strData)
 		fclose(out);
 		fileNum++;
 	} else {
-		if ( (out = fopen(strFilename.c_str(),"wb")) == (FILE *) NULL)
+		if ( (out = fopen(strFilename[fileNum].c_str(),"wb")) == (FILE *) NULL)
 			strError = strfn.Format("Couldn't open %s for writing.\n", strFilename.c_str());
 		else
 		{
