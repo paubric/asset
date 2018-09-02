@@ -80,7 +80,7 @@ app.layout = html.Div(
             dcc.Graph(id='spectrum-graph',style={"width":1500,"height":400},config={'displayModeBar':False}),
         ],style={"padding":20,"display":"grid","grid-template-columns":"auto auto"}),
 
-    ],style={"display":"grid","grid-template-columns":"225px auto"})
+    ],style={"display":"grid","grid-template-columns":"275px auto"})
 app.css.append_css({"external_url": "https://codepen.io/sturzamihai/pen/LJWmQL.css"})
 @app.callback(Output('spectrum-graph', 'figure'),
               events=[Event('graph-update', 'interval')])
