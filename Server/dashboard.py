@@ -48,7 +48,7 @@ app.layout = html.Div(
                 html.Button('Enable Laser 2', id='button2',style={"border":"2px solid #1589FF","width":100,"margin":5,"height":75,"background":"none"}),
                 html.Button('Switch to PIXE', id='button3',style={"border":"2px solid #1589FF","width":100,"margin":5,"height":75,"background":"none"}),
                 html.Button('Switch to Irad', id='button4',style={"border":"2px solid #1589FF","width":100,"margin":5,"height":75,"background":"none"})
-            ],style={"display:":"grid","grid-template-columns":"auto auto","grid-template-rows":"auto auto"})
+            ])
         ],style={"border-right":"2px solid blue"}),
         html.Div([
             html.Div([
