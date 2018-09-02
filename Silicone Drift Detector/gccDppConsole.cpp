@@ -348,7 +348,7 @@ int main(int argc, char* argv[])
 	_getch(); 
 
 	system(CLEAR_TERM);
-	SendPresetAcquisitionTime("PRET=OFF;");
+	SendPresetAcquisitionTime("PRET=200;");
 	SaveSpectrumConfig();
 	cout << "Press the Enter key to continue . . .";
 	_getch(); 
@@ -360,7 +360,7 @@ int main(int argc, char* argv[])
 	_getch(); 
 
 	system(CLEAR_TERM);
-	SendPresetAcquisitionTime("PRET=OFF;");
+	SendPresetAcquisitionTime("PRET=200;");
 	cout << "Press the Enter key to continue . . .";
 	_getch(); 
 
