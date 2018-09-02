@@ -761,7 +761,7 @@ void CConsoleHelper::SaveSpectrumStringToFile(string strData)
 	std::ifstream f(strFilename);
 
 	if(f.good()) {
-		strFilename = "SpectrumData" + std::to_string(fileNum) + ".mca";
+		strFilename = "SpectrumData" + fileNum + ".mca";
 		if ( (out = fopen(strFilename.c_str(),"wb")) == (FILE *) NULL)
 			strError = strfn.Format("Couldn't open %s for writing.\n", strFilename.c_str());
 		else
