@@ -354,11 +354,7 @@ int main(int argc, char* argv[])
 	_getch(); 
 
 	system(CLEAR_TERM);
-	int time=0;
-	while(time<2) {
-		AcquireSpectrum();
-		time++;
-	}
+	AcquireSpectrum();
 	SaveSpectrumFile();
 	cout << "Press the Enter key to continue . . .";
 	_getch(); 
