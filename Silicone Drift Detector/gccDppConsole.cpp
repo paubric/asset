@@ -82,7 +82,7 @@ void ReadDppConfigurationFromHardware(bool bDisplayCfg)
 	if (bHaveStatusResponse && bRunConfigurationTest) {
 		//test configuration functions
 		// Set options for XMTPT_FULL_READ_CONFIG_PACKET
-		chdpp.CreateConfigOptions(&CfgOptions, "CLCK=25", chdpp.DP5Stat, false);
+		chdpp.CreateConfigOptions(&CfgOptions, "", chdpp.DP5Stat, false);
 		cout << endl;
 		cout << "\tRequesting Full Configuration..." << endl;
 		chdpp.ClearConfigReadFormatFlags();	// clear all flags, set flags only for specific readback properties
@@ -354,7 +354,11 @@ int main(int argc, char* argv[])
 	_getch(); 
 
 	system(CLEAR_TERM);
-	AcquireSpectrum();
+	int time=0;
+	while(time<2) {
+		AcquireSpectrum();
+		time++;
+	}
 	SaveSpectrumFile();
 	cout << "Press the Enter key to continue . . .";
 	_getch(); 
