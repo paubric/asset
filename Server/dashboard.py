@@ -1,3 +1,4 @@
+import pickle
 import flask
 import dash
 from dash.dependencies import Output, Event
@@ -8,6 +9,7 @@ import random
 import plotly.graph_objs as go
 from collections import deque
 import bridge_controller as bc
+import machine_learning as ml
 import numpy as np
 
 X_temp = deque(maxlen=20)
@@ -40,7 +42,11 @@ app.layout = html.Div(
     [
         html.Div([
             html.Img(src="https://i.imgur.com/ihOBYtR.png",style={"display":"block","width":125,"margin":"auto auto"}),
-            html.H2('Particle Accelerator Observation Tool',style={"display":"inline-block"})
+            html.H2('Particle Accelerator Observation Tool',style={"display":"inline-block"}),
+            html.Button('Enable Laser 1', id='button'),
+            html.Button('Enable Laser 2', id='button2'),
+            html.Button('Switch to PIXE', id='button3'),
+            html.Button('Switch to Irad', id='button4')
         ],style={"border-right":"2px solid blue"}),
         html.Div([
             html.Div([
@@ -63,11 +69,40 @@ app.layout = html.Div(
                 dcc.Interval(
                     id='graph-update',
                     interval=2*1000
-                )
+                ),
+
             ],style={"display":"grid","grid-template-columns":"50% 50%"})
         ],style={"padding":20,"display":"grid","grid-template-columns":"auto auto"}),
-
+    html.P('Composition here', id='spectrum-stats'),
+    dcc.Graph(id='spectrum-graph',style={"width":1500,"height":400},config={'displayModeBar':False})
     ],style={"display":"grid","grid-template-columns":"225px auto"})
+
+@app.callback(Output('spectrum-graph', 'figure'),
+              events=[Event('graph-update', 'interval')])
+def update_graph_scatter():
+    print('SPECTRUM')
+    spectrum, pred = ml.analyze('../Silicone Drift Detector/gccDppConsoleLinux/SpectrumData.mca')
+    #spectrum, pred = ml.analyze('./Data/611_Magnet.mca')
+    data = plotly.graph_objs.Scatter(
+            x=list(range(4096)),
+            y=spectrum,
+            name='Scatter',
+            mode= 'lines+markers'
+            )
+
+    return {'data': [data]}
+
+@app.callback(
+    Output('spectrum-stats', 'children'),
+    events=[Event('graph-update', 'interval')])
+def display_stats():
+    spectrum, pred = ml.analyze('../Silicone Drift Detector/gccDppConsoleLinux/SpectrumData.mca')
+    pred = [str(x) for x in pred[0]]
+    print(pred)
+    stats_string = 'Composition: '+ \
+        'SiO2: '+pred[0]+' Na2O: '+pred[1]+' CaO: '+pred[2]+' Al2O3: '+pred[3]
+    print(stats_string)
+    return stats_string
 
 @app.callback(Output('live-graph', 'figure'),
               events=[Event('graph-update', 'interval')])
