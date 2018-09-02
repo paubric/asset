@@ -44,10 +44,10 @@ app.layout = html.Div(
             html.Img(src="https://i.imgur.com/ihOBYtR.png",style={"display":"block","width":125,"margin":"auto auto"}),
             html.H2('Particle Accelerator Observation Tool',style={"display":"inline-block"}),
             html.Div([
-                html.Button('Enable Laser 1', id='button',style={"border":"2px solid #1589FF","width":100,"margin":5,"padding":5}),
-                html.Button('Enable Laser 2', id='button2',style={"border":"2px solid #1589FF","width":100,"margin":5,"padding":5}),
-                html.Button('Switch to PIXE', id='button3',style={"border":"2px solid #1589FF","width":100,"margin":5,"padding":5}),
-                html.Button('Switch to Irad', id='button4',style={"border":"2px solid #1589FF","width":100,"margin":5,"padding":5})
+                html.Button('Enable Laser 1', id='button',style={"border":"2px solid #1589FF","width":100,"margin":5,"padding":5,"background":"none"}),
+                html.Button('Enable Laser 2', id='button2',style={"border":"2px solid #1589FF","width":100,"margin":5,"padding":5,"background":"none"}),
+                html.Button('Switch to PIXE', id='button3',style={"border":"2px solid #1589FF","width":100,"margin":5,"padding":5,"background":"none"}),
+                html.Button('Switch to Irad', id='button4',style={"border":"2px solid #1589FF","width":100,"margin":5,"padding":5,"background":"none"})
             ],style={"display:":"grid","grid-template-columns":"auto auto","grid-template-rows":"auto auto"})
         ],style={"border-right":"2px solid blue"}),
         html.Div([
