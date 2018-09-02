@@ -1,7 +1,0 @@
-<map id="G" name="G">
-<area shape="rect" id="node3" href="$class_c_dpp_lib_usb.html#a6d8e43f5056cf450a2c54f475145d411" title="CDppLibUsb::InitializeLibusb" alt="" coords="267,5,453,32"/>
-<area shape="rect" id="node5" href="$class_c_dpp_lib_usb.html#a424d59da728622177ed8309c1082526f" title="CDppLibUsb::FindUSBDevice" alt="" coords="264,56,456,83"/>
-<area shape="rect" id="node7" href="$class_c_dpp_lib_usb.html#a4534ae7ff264e5865608a5582a2fc6c1" title="CDppLibUsb::CloseUSBDevice" alt="" coords="260,107,460,133"/>
-<area shape="rect" id="node9" href="$class_c_dpp_lib_usb.html#a126e0fce94705f87c9a02c3e67416993" title="CDppLibUsb::CountDP5LibusbDevices" alt="" coords="238,157,482,184"/>
-<area shape="rect" id="node11" href="$class_c_dpp_lib_usb.html#ada1312ad2837f5608405084126164cde" title="CDppLibUsb::PrintDevices" alt="" coords="273,208,447,235"/>
-</map>

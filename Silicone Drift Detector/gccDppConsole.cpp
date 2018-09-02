@@ -348,7 +348,7 @@ int main(int argc, char* argv[])
 	_getch(); 
 
 	system(CLEAR_TERM);
-	SendPresetAcquisitionTime("PRET=20;");
+	SendPresetAcquisitionTime("PRET=50;");
 	SaveSpectrumConfig();
 	cout << "Press the Enter key to continue . . .";
 	_getch(); 

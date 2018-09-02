@@ -8,8 +8,6 @@
 
 using namespace stringSplit;
 
-std::ofstream fout("data.txt");
-
 CConsoleHelper::CConsoleHelper(void)
 {
 	DppLibUsb.NumDevices = 0;
@@ -670,10 +668,6 @@ void CConsoleHelper::ConsoleGraph(long lData[], long chan, bool bLog, std::strin
 				plot[iCol][(ScreenH-2)-iRow] = strRow.at(iCol);
 			}
 		}
-	}
-
-	for(int i = 0,i<(sizeof(lData)/sizeof(*lData));i++) { 
-		fout << lData[i] << std::endl;
 	}
 
 	for (y=0;y<ScreenH;y++){

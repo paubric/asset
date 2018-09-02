@@ -1,4 +1,0 @@
-<map id="G" name="G">
-<area shape="rect" id="node3" href="$class_c_d_p5_status.html#a18c3ccef9a955d68bbe6253321e9c524" title="Convert a DPP status packet into DP4_FORMAT_STATUS data." alt="" coords="288,5,483,32"/>
-<area shape="rect" id="node5" href="$class_c_d_p5_status.html#af3cc4e35f9786e863d38de800c5b65fc" title="Convert a DPP diagnostic data packet into DiagDataType data." alt="" coords="273,56,498,83"/>
-</map>
