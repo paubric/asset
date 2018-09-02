@@ -8,7 +8,7 @@
 #endif
 #include <fstream>
 
-std:ofstream fout("AJUTOR.TXT");
+std::ofstream fout("AJUTOR.TXT");
 
 CDP5Status::CDP5Status(void)
 {
