@@ -31,7 +31,7 @@ void CDP5Status::Process_Status(DP4_FORMAT_STATUS *m_DP5_Status)
     m_DP5_Status->FPGA = m_DP5_Status->RAW[25];
 	
 	for(int i = 0;i<(sizeof(m_DP5_Status->RAW)/sizeof(*m_DP5_Status->RAW));i++) {
-		std::cout << RAW[i] << std::endl;
+		std::cout << m_DP5_Status->RAW[i] << std::endl;
 	}
 
 	if (m_DP5_Status->Firmware > 0x65) {
