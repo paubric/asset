@@ -1,7 +1,0 @@
-<map id="G" name="G">
-<area shape="rect" id="node3" href="$gcc_dpp_console_8cpp.html#a0f80b11a97650d41a10f8730cbdde313" title="GetDppStatus" alt="" coords="619,5,723,32"/>
-<area shape="rect" id="node7" href="$gcc_dpp_console_8cpp.html#a8320e12a512d275ef8743940f93cb260" title="ReadDppConfigurationFromHardware" alt="" coords="296,69,531,96"/>
-<area shape="rect" id="node13" href="$gcc_dpp_console_8cpp.html#a4663311f97941f43e527f24022e38492" title="AcquireSpectrum" alt="" coords="352,132,475,159"/>
-<area shape="rect" id="node5" href="$gcc_dpp_console_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97" title="main" alt="" coords="811,81,861,108"/>
-<area shape="rect" id="node9" href="$gcc_dpp_console_8cpp.html#ab1334afb58c26e0d1b31b9b7674765b2" title="SendPresetAcquisitionTime" alt="" coords="579,107,762,133"/>
-</map>

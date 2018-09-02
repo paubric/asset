@@ -1,7 +1,0 @@
-<map id="G" name="G">
-<area shape="rect" id="node3" href="$class_c_ascii_cmd_utilities.html#a57cc42d832765acb6386bfd138cca7a6" title="Remove illegal commands from the command stream by device type." alt="" coords="656,56,949,83"/>
-<area shape="rect" id="node5" href="$class_c_send_command.html#a02a11a2c0ae2794541961173068be69a" title="Creates a DPP command that requires configuration data options processing." alt="" coords="997,5,1229,32"/>
-<area shape="rect" id="node9" href="$class_c_ascii_cmd_utilities.html#aa0b68403461a17cf97426b4224a68ab2" title="Remove illegal commands from the command stream by device type." alt="" coords="265,107,607,133"/>
-<area shape="rect" id="node11" href="$class_c_ascii_cmd_utilities.html#a404a9f54610169460dae7eb100df5795" title="CAsciiCmdUtilities::Remove_MCA8000D_Cmds" alt="" coords="287,157,585,184"/>
-<area shape="rect" id="node7" href="$gcc_dpp_console_8cpp.html#acf695c5575fa42eed12211f2f841d5b7" title="SendConfigFileToDpp" alt="" coords="1040,56,1187,83"/>
-</map>
