@@ -30,9 +30,9 @@ void CDP5Status::Process_Status(DP4_FORMAT_STATUS *m_DP5_Status)
 	m_DP5_Status->Firmware = m_DP5_Status->RAW[24];
     m_DP5_Status->FPGA = m_DP5_Status->RAW[25];
 	
-	for(int i = 0;i<(sizeof(m_DP5_Status->RAW)/sizeof(*m_DP5_Status->RAW));i++) {
-		std::cout << m_DP5_Status->RAW[i] << std::endl;
-	}
+	//for(int i = 0;i<(sizeof(m_DP5_Status->RAW)/sizeof(*m_DP5_Status->RAW));i++) {
+		//std::cout << m_DP5_Status->RAW[i] << std::endl;
+	//}
 
 	if (m_DP5_Status->Firmware > 0x65) {
 		m_DP5_Status->Build = m_DP5_Status->RAW[37] & 0xF;		//Build # added in FW6.06
