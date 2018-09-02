@@ -2,6 +2,7 @@
 #include "DP5Status.h"
 #include "stringex.h"
 #include "DppConst.h"
+#include <iostream>
 #ifdef _MSC_VER
     #pragma warning(disable:4996)
 #endif
@@ -30,7 +31,7 @@ void CDP5Status::Process_Status(DP4_FORMAT_STATUS *m_DP5_Status)
     m_DP5_Status->FPGA = m_DP5_Status->RAW[25];
 	
 	for(int i = 0;i<(sizeof(RAW)/sizeof(*RAW)),i++) {
-		std::cout << RAW[i] << endl;
+		std::cout << RAW[i] << std::endl;
 	}
 
 	if (m_DP5_Status->Firmware > 0x65) {
