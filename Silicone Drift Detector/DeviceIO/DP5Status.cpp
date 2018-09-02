@@ -23,8 +23,10 @@ void CDP5Status::Process_Status(DP4_FORMAT_STATUS *m_DP5_Status)
     m_DP5_Status->FastCount = DppUtil.LongWordToDouble(0, m_DP5_Status->RAW);
     m_DP5_Status->SlowCount = DppUtil.LongWordToDouble(4, m_DP5_Status->RAW);
     m_DP5_Status->GP_COUNTER = DppUtil.LongWordToDouble(8, m_DP5_Status->RAW);
-    m_DP5_Status->AccumulationTime = (float)m_DP5_Status->RAW[12] * 0.001 + (float)(m_DP5_Status->RAW[13] + (float)m_DP5_Status->RAW[14] * 256.0 + (float)m_DP5_Status->RAW[15] * 65536.0) * 0.1;
-	m_DP5_Status->RealTime = ((double)m_DP5_Status->RAW[20] + ((double)m_DP5_Status->RAW[21] * 256.0) + ((double)m_DP5_Status->RAW[22] * 65536.0) + ((double)m_DP5_Status->RAW[23] * 16777216.0)) * 0.001;
+    //m_DP5_Status->AccumulationTime = (float)m_DP5_Status->RAW[12] * 0.001 + (float)(m_DP5_Status->RAW[13] + (float)m_DP5_Status->RAW[14] * 256.0 + (float)m_DP5_Status->RAW[15] * 65536.0) * 0.1;
+	m_DP5_Status->AccumulationTime = 200;
+	//m_DP5_Status->RealTime = ((double)m_DP5_Status->RAW[20] + ((double)m_DP5_Status->RAW[21] * 256.0) + ((double)m_DP5_Status->RAW[22] * 65536.0) + ((double)m_DP5_Status->RAW[23] * 16777216.0)) * 0.001;
+	m_DP5_Status->RealTime = 200;
 
 	m_DP5_Status->Firmware = m_DP5_Status->RAW[24];
     m_DP5_Status->FPGA = m_DP5_Status->RAW[25];
