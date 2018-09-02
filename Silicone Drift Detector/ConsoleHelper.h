@@ -7,11 +7,11 @@
 
 #include <string>
 #include <vector>
-#include "DppLibUsb.h"			// LibUsb Support
-#include "DP5Protocol.h"		// DPP Protocol Support
-#include "ParsePacket.h"		// Packet Parser
-#include "SendCommand.h"		// Command Generator
-#include "DP5Status.h"			// Status Decoder
+#include "DeviceIO/DppLibUsb.h"			// LibUsb Support
+#include "DeviceIO/DP5Protocol.h"		// DPP Protocol Support
+#include "DeviceIO/ParsePacket.h"		// Packet Parser
+#include "DeviceIO/SendCommand.h"		// Command Generator
+#include "DeviceIO/DP5Status.h"			// Status Decoder
 #include <time.h>				// time library for rand seed
 
 typedef struct _SpectrumFileType {
