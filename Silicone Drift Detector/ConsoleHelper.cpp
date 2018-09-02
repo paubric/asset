@@ -5,7 +5,6 @@
 #include "stringex.h"
 #include <string.h>
 #include <fstream>
-#include <string>
 
 using namespace stringSplit;
 
@@ -750,34 +749,20 @@ string CConsoleHelper::CreateMCAData(long m_larDataBuffer[], SpectrumFileType sf
 
 void CConsoleHelper::SaveSpectrumStringToFile(string strData)
 {
-	int fileNum = 0;
 	FILE  *out;
-	string strFilename[100] = {"a","b","c","d","e","f","g","h","i"};
+	string strFilename;
 	string strError;
 	stringex strfn;
 
 	strFilename = "SpectrumData.mca"; 
 
-	std::ifstream f(strFilename);
-
-	if(f.good()) {
-		if ( (out = fopen(strFilename[fileNum].c_str(),"wb")) == (FILE *) NULL)
-			strError = strfn.Format("Couldn't open %s for writing.\n", strFilename.c_str());
-		else
-		{
-			fprintf(out,"%s",strData.c_str());
-		}
-		fclose(out);
-		fileNum++;
-	} else {
-		if ( (out = fopen(strFilename[fileNum].c_str(),"wb")) == (FILE *) NULL)
-			strError = strfn.Format("Couldn't open %s for writing.\n", strFilename.c_str());
-		else
-		{
-			fprintf(out,"%s",strData.c_str());
-		}
-		fclose(out);
+	if ( (out = fopen(strFilename.c_str(),"wb")) == (FILE *) NULL)
+		strError = strfn.Format("Couldn't open %s for writing.\n", strFilename.c_str());
+	else
+	{
+		fprintf(out,"%s",strData.c_str());
 	}
+	fclose(out);
 }
 
 string CConsoleHelper::CreateSpectrumConfig(string strRawCfgIn) 
