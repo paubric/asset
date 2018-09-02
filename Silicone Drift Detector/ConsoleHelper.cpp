@@ -749,20 +749,34 @@ string CConsoleHelper::CreateMCAData(long m_larDataBuffer[], SpectrumFileType sf
 
 void CConsoleHelper::SaveSpectrumStringToFile(string strData)
 {
+	int fileNum = 0;
 	FILE  *out;
 	string strFilename;
 	string strError;
 	stringex strfn;
 
-	strFilename = "SpectrumData.mca";
+	strFilename = "SpectrumData.mca"; 
 
-	if ( (out = fopen(strFilename.c_str(),"wb")) == (FILE *) NULL)
-		strError = strfn.Format("Couldn't open %s for writing.\n", strFilename.c_str());
-	else
-	{
-		fprintf(out,"%s",strData.c_str());
+	std::ifstream f(strFilename);
+	
+	if(f.good()) {
+		strFilename = "SpectrumData" + string(fileNum) + ".mca";
+		if ( (out = fopen(strFilename.c_str(),"wb")) == (FILE *) NULL)
+			strError = strfn.Format("Couldn't open %s for writing.\n", strFilename.c_str());
+		else
+		{
+			fprintf(out,"%s",strData.c_str());
+		}
+		fclose(out);
+	} else {
+		if ( (out = fopen(strFilename.c_str(),"wb")) == (FILE *) NULL)
+			strError = strfn.Format("Couldn't open %s for writing.\n", strFilename.c_str());
+		else
+		{
+			fprintf(out,"%s",strData.c_str());
+		}
+		fclose(out);
 	}
-	fclose(out);
 }
 
 string CConsoleHelper::CreateSpectrumConfig(string strRawCfgIn) 
