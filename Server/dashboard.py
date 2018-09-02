@@ -1,7 +1,7 @@
 import pickle
 import flask
 import dash
-from dash.dependencies import Output, Event
+from dash.dependencies import Output, Event, Input
 import dash_core_components as dcc
 import dash_html_components as html
 import plotly
@@ -43,14 +43,18 @@ app.layout = html.Div(
         html.Div([
             html.Img(src="https://i.imgur.com/ihOBYtR.png",style={"display":"block","width":125,"margin":"auto auto"}),
             html.H2('Particle Accelerator Observation Tool',style={"display":"inline-block"}),
-            html.Button('Enable Laser 1', id='button'),
-            html.Button('Enable Laser 2', id='button2'),
-            html.Button('Switch to PIXE', id='button3'),
-            html.Button('Switch to Irad', id='button4')
+            html.Div([
+                html.Button('Enable Laser 1', id='button',style={"border":"2px solid #1589FF","width":100,"margin":5,"padding":5}),
+                html.Button('Enable Laser 2', id='button2',style={"border":"2px solid #1589FF","width":100,"margin":5,"padding":5}),
+                html.Button('Switch to PIXE', id='button3',style={"border":"2px solid #1589FF","width":100,"margin":5,"padding":5}),
+                html.Button('Switch to Irad', id='button4',style={"border":"2px solid #1589FF","width":100,"margin":5,"padding":5})
+            ],style={"display:":"grid","grid-template-columns":"auto auto","grid-template-rows":"auto auto"})
         ],style={"border-right":"2px solid blue"}),
         html.Div([
             html.Div([
-                html.Img(id="cam",src="http://192.168.162.254:10000/cgi-bin/video.cgi?msubmenu=mjpg",width="500",height="400",style={"display":"block",'margin-top':20}),
+                #html.Button([
+                    html.Img(id="cam",src="http://192.168.162.254:10000/cgi-bin/video.cgi?msubmenu=mjpg",width="500",height="400", style={"display":"block","margin-top":"20px"}),
+                #],id="cam"),
                 html.Img(id="usbcam",src="http://127.0.0.1:8081",width="500",height="400",style={'margin-top':50})
             ]),
             html.Div([
@@ -71,17 +75,18 @@ app.layout = html.Div(
                     interval=2*1000
                 ),
 
-            ],style={"display":"grid","grid-template-columns":"50% 50%"})
+            ],style={"display":"grid","grid-template-columns":"50% 50%"}),
+            html.P('Composition here', id='spectrum-stats'),
+            dcc.Graph(id='spectrum-graph',style={"width":1500,"height":400},config={'displayModeBar':False}),
         ],style={"padding":20,"display":"grid","grid-template-columns":"auto auto"}),
-    html.P('Composition here', id='spectrum-stats'),
-    dcc.Graph(id='spectrum-graph',style={"width":1500,"height":400},config={'displayModeBar':False})
-    ],style={"display":"grid","grid-template-columns":"225px auto"})
 
+    ],style={"display":"grid","grid-template-columns":"225px auto"})
+app.css.append_css({"external_url": "https://codepen.io/sturzamihai/pen/LJWmQL.css"})
 @app.callback(Output('spectrum-graph', 'figure'),
               events=[Event('graph-update', 'interval')])
 def update_graph_scatter():
     print('SPECTRUM')
-    spectrum, pred = ml.analyze('../Silicone Drift Detector/gccDppConsoleLinux/SpectrumData.mca')
+    spectrum, pred = ml.analyze('../Silicone Drift Detector/SpectrumData.mca')
     #spectrum, pred = ml.analyze('./Data/611_Magnet.mca')
     data = plotly.graph_objs.Scatter(
             x=list(range(4096)),
@@ -96,13 +101,17 @@ def update_graph_scatter():
     Output('spectrum-stats', 'children'),
     events=[Event('graph-update', 'interval')])
 def display_stats():
-    spectrum, pred = ml.analyze('../Silicone Drift Detector/gccDppConsoleLinux/SpectrumData.mca')
+    spectrum, pred = ml.analyze('../Silicone Drift Detector/SpectrumData.mca')
     pred = [str(x) for x in pred[0]]
     print(pred)
     stats_string = 'Composition: '+ \
         'SiO2: '+pred[0]+' Na2O: '+pred[1]+' CaO: '+pred[2]+' Al2O3: '+pred[3]
     print(stats_string)
     return stats_string
+
+@app.callback(Output('cam','children'), [Input('cam', 'n_clicks')])
+def on_click(bclick):
+    print(bclick)
 
 @app.callback(Output('live-graph', 'figure'),
               events=[Event('graph-update', 'interval')])
