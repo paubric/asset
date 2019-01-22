@@ -64,6 +64,6 @@ GET http://device.local/arduino/pulse/pin/value
 ```
 # How to install
 1. Get a particle accelerator
-!()[https://github.com/paubric/parrot/Parrot.png]
+![](https://github.com/paubric/parrot/Parrot.png)
 
 
